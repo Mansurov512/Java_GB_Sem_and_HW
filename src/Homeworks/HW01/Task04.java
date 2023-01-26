@@ -64,17 +64,17 @@ public class Task04
         }
 
         int counter01 = 0;
-        for (int j = indexOfPlus + 1; j < indexOfEquals; j++)//заполняем массив второго числа
+        for (int i = indexOfPlus + 1; i < indexOfEquals; i++)//заполняем массив второго числа
         {
-            number02[counter01] = lineChar[j];
+            number02[counter01] = lineChar[i];
             ++counter01;
         }
         System.out.printf(" %d \n", counter01);
 
         int counter02 = 0;
-        for (int k = indexOfEquals + 1; k < lineChar.length; k++)//заполняем массив суммы
+        for (int i = indexOfEquals + 1; i < lineChar.length; i++)//заполняем массив суммы
         {
-            sumNumbers[counter02] = lineChar[k];
+            sumNumbers[counter02] = lineChar[i];
             ++counter02;
         }
         System.out.printf(" %d \n", indexOfPlus);
@@ -92,11 +92,11 @@ public class Task04
         int indexesQuestionNumber01[] = new int[number01.length]; // массив с индексами вопросов в первом числе
         int counter03 = 0; // количество вопросов в первом числе
 
-        for (int l = 0; l < number01.length ; l++)
+        for (int i = 0; i < number01.length ; i++)
         {
-            if (number01[l] == '?')
+            if (number01[i] == '?')
             {
-                indexesQuestionNumber01[counter03] = l; // последовательно в массив вносим индексы того, где стоят вопросы
+                indexesQuestionNumber01[counter03] = i; // последовательно в массив вносим индексы того, где стоят вопросы
                 counter03++;
             }
         }
@@ -108,28 +108,73 @@ public class Task04
         int indexesQuestionNumber02[] = new int[number02.length]; // массив с индексами вопросов во втором числе
         int counter04 = 0; // количество вопросов во втором числе
 
-        for (int ll = 0; ll < number02.length ; ll++) // по-хорошему нужно было бы сделать метод, чтобы не дублировать один код 3 раза,
-                                                      // но не знаю как возвращать и массив и int переменную сразу в одном методе
+        for (int i = 0; i < number02.length ; i++) // по-хорошему нужно было бы сделать метод, чтобы не дублировать один код 3 раза,
+                                                      // но не знаю как возвращать и массив, и int переменную сразу в одном методе
         {
-            if (number02[ll] == '?')
+            if (number02[i] == '?')
             {
-                indexesQuestionNumber02[counter04] = ll; //
+                indexesQuestionNumber02[counter04] = i; //
                 counter04++;
             }
         }
 
         int indexesQuestionSumNumbers[] = new int[sumNumbers.length]; // массив с индексами вопросов в сумме
-        int counter05 = 0; // количество вопросов в сумме
+        int counter05 = 0; // количество вопросов в сумме уравнения
 
-        for (int lll = 0; lll < sumNumbers.length ; lll++)
+        for (int i = 0; i < sumNumbers.length ; i++)
         {
-            if (sumNumbers[lll] == '?')
+            if (sumNumbers[i] == '?')
             {
-                indexesQuestionSumNumbers[counter05] = lll; // последовательно в массив вносим индексы того, где стоят вопросы
+                indexesQuestionSumNumbers[counter05] = i; // последовательно в массив вносим индексы того, где стоят вопросы
                 counter05++;
             }
         }
-        // в данный момент мы теперь знаем сколько ? в каждом из чисел и на каких индексах они расположены
+        // в данном этапе мы теперь знаем сколько ? в каждом из чисел и на каких индексах они расположены
+
+        int amoutAllQuestion = counter03 + counter04 + counter05; // общее количество вопросов в уравнении
+
+        double combinationQuation = Math.pow(10, amoutAllQuestion) - 1; // получаем максимальное число до которого мы будем перебирать цифры вместо ?
+                                                                        // например количество ? в сумме равно 2, то 10^2 - 1 = 99 - 00 до 99 будем перебирать цифры.
+        for (int i = 0; i <= combinationQuation; i++)
+        {
+            String digitsForSelection = Integer.toString(i); // переводим число i в строку
+
+            char arrayDigitsForSelection[] = new char[amoutAllQuestion]; // пустой массив изначально заполнен нулями длиной сколько у нас всего вопросов в уравнении
+            int counter06 = arrayDigitsForSelection.length; // счётчик, чтобы идти по массиву
+
+            for (int j = digitsForSelection.length() - 1; j >= 0; j--) // количество проходов зависит от количества разрядов числа i(строки)
+            {
+                arrayDigitsForSelection[counter06 - 1] = digitsForSelection.charAt(j); // последний индекс = последнему индексу строки, потом предпоследние и так далее,
+                                                                                       // пока не закончатся разряды числа i(строки)
+                --counter06; // идём по индексам массива с нулями с права на лево, от последнего в сторону нулевого
+            }
+
+
+//            digitsForSelectionArray[0] = 1;
+//            digitsForSelectionArray[1] = 1;
+
+             // из строки берём необходимые цифры на замену ?
+
+
+
+
+
+
+        }
+
+        // V     нужно перевести число в набор/массив символов
+        // V     создать пустой массив заполненный нулями с длиной равной суммарному количеству ?
+        // из первого массива символов брать символы с конца и добавлять в конец пустого массива
+        // делать именно так нужно, чтобы если число "короче" длины массива, впереди были нули
+
+        // создать копии массивов чисел
+        // в этих копиях заменить вопросы на цифры из массива с цифрами для перебора - индексы расположения вопросов мы знаем
+        // из этих массивов воссоздать числа
+        // проверить равна ли сумма чисел-слагаемых требуемой сумме
+        // Если да - это и есть ответ
+        // если нет - то следующая итеррация цикла со следующим набором цифр для перебора
+        // Если всё перебрали, а ответа нет - решение невозможно.
+
 
 
 
