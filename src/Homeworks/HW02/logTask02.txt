@@ -1,0 +1,10 @@
+янв. 30, 2023 6:56:32 PM Homeworks.HW02.Task02 Calculator
+INFO: Пользователь ввёл дывлоджл
+янв. 30, 2023 6:56:34 PM Homeworks.HW02.Task02 Calculator
+INFO: Пользователь ввёл 5.0
+янв. 30, 2023 6:56:35 PM Homeworks.HW02.Task02 Calculator
+INFO: Пользователь ввёл 6.0
+янв. 30, 2023 6:56:35 PM Homeworks.HW02.Task02 Calculator
+WARNING: Пользователь ввёл некорректное дывлоджл
+янв. 30, 2023 6:56:35 PM Homeworks.HW02.Task02 Calculator
+INFO: Результат равен -1.0
