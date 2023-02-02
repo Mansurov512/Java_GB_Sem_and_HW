@@ -29,7 +29,8 @@ public class Task01
                     arrayNumbers[j-1] = temp;
                 }
                 String str = "[";
-                for (int k = 0; k < arrayNumbers.length; k++)
+                for (int k = 0; k < arrayNumbers.length; k++) // не знаю, правильно ли создавать какие-то переменные,
+                                                              // только для того, чтобы записать их в лог
                 {
                     str = str + arrayNumbers[k] + " ";
                 }
