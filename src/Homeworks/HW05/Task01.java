@@ -26,5 +26,15 @@ public class Task01
         {
             System.out.printf("Телефон: %d,  Имя: %s \n", item.getKey(), item.getValue());
         }
+
+        for (Map.Entry<Integer, String> item : phoneBook.entrySet())//ищем по книге номер(-а) интересующего нас человека
+        {
+            if (item.getValue().equals("Кирилл"))
+            {
+                System.out.println(item);
+            }
+
+            //System.out.printf("Key: %d  Value: %s \n", item.getKey(), item.getValue());
+        }
     }
 }
