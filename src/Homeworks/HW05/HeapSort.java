@@ -1,7 +1,9 @@
 // Реализовать алгоритм пирамидальной сортировки (HeapSort)
 package Homeworks.HW05;
 
-public class HeapSort
+import java.util.Arrays;
+
+public class HeapSort //честно скажу что взял код из интернета почти весь, но разобрался как работает сама сортировка и код
 {
     public void sort(int arr[])
     {
@@ -51,25 +53,15 @@ public class HeapSort
         }
     }
 
-    /* Вспомогательная функция для вывода на экран массива размера n */
-    static void printArray(int arr[])
-    {
-        int n = arr.length;
-        for (int i=0; i<n; ++i)
-            System.out.print(arr[i]+" ");
-        System.out.println();
-    }
-
-    // Управляющая программа
     public static void main(String args[])
     {
-        int arr[] = {12, 11, 13, 5, 6, 7};
+        int arr[] = {4, 8, 45, 63, 17, 6, 8, 100, 15, 2};
+        System.out.println(Arrays.toString(arr));
         int n = arr.length;
 
         HeapSort ob = new HeapSort();
         ob.sort(arr);
 
-        System.out.println("Sorted array is");
-        printArray(arr);
+        System.out.println(Arrays.toString(arr));
     }
 }
