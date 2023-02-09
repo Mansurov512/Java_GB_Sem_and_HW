@@ -36,12 +36,12 @@ public class Task01
     public static int[] RandomRandom()
     {
         Random random = new Random();
-        int[] array = new int[random.nextInt(1,20)];
+        int[] array = new int[1000];
 
         IntStream.range(0, array.length) // С помощью стрима проходим по всему массиву
                 // Заносим рандомное число в ячейку массива
                 // Рандомные значения могут быть в диапазоне от 0 до 99 включительно
-                .forEach(index -> array[index] = random.nextInt(99));
+                .forEach(index -> array[index] = random.nextInt(24));
         return array;
     }
 
