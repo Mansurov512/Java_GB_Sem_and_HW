@@ -2,21 +2,19 @@ package Homeworks.HW06;
 
 public class Laptop
 {
-    Laptop(int valueRAM, int valueHDD, int sizeIches, double frequencyCPU, double price, String OperationSystem)
+    Laptop(int valueRAM, int valueHDD, int sizeIches, double frequencyCPU, double price)
     {
         this.valueRAM = valueRAM;
         this.valueHDD = valueHDD;
         this.sizeIches = sizeIches;
         this.frequencyCPU = frequencyCPU;
         this.price = price;
-        this.OperationSystem = OperationSystem;
     }
     private int valueRAM;
     private int valueHDD;
     private int sizeIches;
     private double frequencyCPU;
     private double price;
-    private String OperationSystem;
 
     public void TurnOn()
     {
@@ -82,13 +80,4 @@ public class Laptop
         this.frequencyCPU = frequencyCPU;
     }
 
-    public String getOperationSystem()
-    {
-        return OperationSystem;
-    }
-
-    public void setOperationSystem(String operationSystem)
-    {
-        OperationSystem = operationSystem;
-    }
 }
