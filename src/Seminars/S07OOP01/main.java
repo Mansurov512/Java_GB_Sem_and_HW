@@ -12,10 +12,10 @@ public class main {
         mainGoods.add(cola);
         mainGoods.add(mars);
 
-        VendingMachine box = new VendingMachine();
-        box.initProduct(mainGoods);
-        System.out.println(box.getGoods());
-        box.getProduct("cola");
+//        VendingMachine box = new VendingMachine();
+//        box.initProduct(mainGoods);
+//        System.out.println(box.getGoods());
+//        box.getProduct("cola");
     }
 
 

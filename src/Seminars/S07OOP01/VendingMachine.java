@@ -10,6 +10,9 @@ public abstract class VendingMachine {
             goods.add(item);
         }
     }
+
+    public abstract List<Soda> getGoods();
+
     public void getProduct(String name) {
         for (Produkt item: goods) {
            if(item.getName().equals(name)) {

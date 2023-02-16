@@ -2,7 +2,13 @@ package Homeworks.HW07OOP;
 
 public class Coffee extends HotDrink
 {
-    int temperature;
+    private int temperature;
+
+    public Coffee(String name, int volume, int temperature)
+    {
+        super(name, volume);
+        this.temperature = temperature;
+    }
 
     public int getTemperature()
     {
