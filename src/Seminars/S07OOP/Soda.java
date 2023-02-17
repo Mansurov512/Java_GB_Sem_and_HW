@@ -1,4 +1,4 @@
-package Seminars.S07OOP01;
+package Seminars.S07OOP;
 
 public class Soda extends Produkt{
     private String flavor;

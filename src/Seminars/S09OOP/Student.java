@@ -1,4 +1,4 @@
-package Seminars.S08OOP;
+package Seminars.S09OOP;
 
 import java.util.Objects;
 

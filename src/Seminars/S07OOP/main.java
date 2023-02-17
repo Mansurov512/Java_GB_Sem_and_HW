@@ -1,4 +1,4 @@
-package Seminars.S07OOP01;
+package Seminars.S07OOP;
 
 import java.util.ArrayList;
 import java.util.List;
