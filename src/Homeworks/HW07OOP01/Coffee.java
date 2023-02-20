@@ -1,4 +1,4 @@
-package Homeworks.HW07OOP;
+package Homeworks.HW07OOP01;
 
 public class Coffee extends HotDrink
 {
