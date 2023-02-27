@@ -15,10 +15,13 @@ public class ex01
         list.add("K");
         list.add("A");
         // Iterator to traverse the list
-        Iterator iterator = list.iterator();
+        Iterator<String> iterator = list.iterator();
         System.out.println("List elements : ");
         while (iterator.hasNext())
-            System.out.print(iterator.next() + " ");
+        {
+            String str = iterator.next();
+            System.out.print(str + " " + str + " ");
+        }
         System.out.println();
     }
 }
