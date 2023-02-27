@@ -6,6 +6,9 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         AnimalBehaiovur animal = new Animal(10, true, "Vasya");
+        animal.say();
+        AnimalBehaiovur.sayLikeHuman();
+
         List<Animal> animals = new ArrayList<>();
         Capibara sasy = new Capibara(10, false, "'sasy", true, true, 10);
         Pinguin dasy = new Pinguin(10, false, "'sasy", 10, true);
